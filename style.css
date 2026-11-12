@@ -1,0 +1,2784 @@
+
+/* =================================
+   1. PENGATURAN DASAR WEBSITE
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #f5f0df;
+    --cream-light: #fffdf6;
+
+    --brown: #40220f;
+    --brown-light: #745139;
+
+    --green: #55713d;
+    --green-light: #829767;
+
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cream);
+    color: var(--brown);
+}
+
+
+/* =================================
+   2. HALAMAN PEMBUKA
+================================= */
+
+.opening-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fffdf6,
+            #e9e1c9
+        );
+}
+
+
+/* =================================
+   3. KOTAK KONTEN PEMBUKA
+================================= */
+
+.opening-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.opening-content {
+    padding: 35px 20px;
+    animation: fadeIn 1.2s ease;
+}
+
+
+/* =================================
+   4. LOGO KSS
+================================= */
+
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.opening-logo {
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    animation: logoAppear 1.2s ease;
+}
+
+
+/* =================================
+   5. JUDUL WEBSITE
+================================= */
+
+.opening-title {
+    font-size: 30px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: var(--brown);
+
+    margin-bottom: 10px;
+}
+
+.opening-subtitle {
+    font-size: 14px;
+    color: var(--green);
+
+    letter-spacing: 1px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =================================
+   6. TEKS SAMBUTAN
+================================= */
+
+.welcome-text {
+    margin-bottom: 35px;
+}
+
+.welcome-text p {
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: var(--brown-light);
+}
+
+.welcome-text h2 {
+    font-size: 48px;
+
+    color: var(--green);
+
+    margin: 8px 0;
+}
+
+
+/* =================================
+   7. TOMBOL MASUK WEBSITE
+================================= */
+
+.enter-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 28px;
+
+    background-color: var(--green);
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    border-radius: 30px;
+
+    transition: 0.3s ease;
+}
+
+.enter-button:hover {
+    background-color: var(--brown);
+
+    transform: translateY(-4px);
+}
+
+.enter-button span {
+    font-size: 20px;
+}
+
+
+/* =================================
+   8. FOOTER
+================================= */
+
+.opening-footer {
+    margin-top: 45px;
+
+    font-size: 12px;
+
+    color: var(--brown-light);
+}
+
+
+/* =================================
+   9. ANIMASI
+================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =================================
+   10. RESPONSIVE UNTUK HP
+================================= */
+
+@media screen and (max-width: 480px) {
+
+    .opening-logo {
+        width: 145px;
+        height: 145px;
+    }
+
+    .opening-title {
+        font-size: 23px;
+    }
+
+    .opening-subtitle {
+        font-size: 12px;
+    }
+
+    .welcome-text h2 {
+        font-size: 40px;
+    }
+
+    .welcome-text p {
+        font-size: 14px;
+    }
+
+    .enter-button {
+        padding: 13px 23px;
+        font-size: 12px;
+    }
+
+}
+
+
+/* =====================================
+   11. NAVBAR
+===================================== */
+
+.navbar {
+    width: 100%;
+    background-color: var(--cream-light);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 12px rgba(64, 34, 15, 0.08);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--brown);
+    text-decoration: none;
+
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.nav-logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: var(--brown-light);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--green);
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: none;
+
+    color: var(--brown);
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   12. HERO / BANNER
+===================================== */
+
+.hero {
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(35, 27, 15, 0.58),
+            rgba(35, 27, 15, 0.58)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 750px;
+    color: var(--white);
+}
+
+.hero-label {
+    color: #e8d6ad;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.15;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #d6c69c;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* =====================================
+   13. TOMBOL UMUM
+===================================== */
+
+.btn-primary,
+.btn-outline {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--green);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--brown);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: var(--brown);
+}
+
+
+/* =====================================
+   14. JUDUL SETIAP BAGIAN
+===================================== */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-label {
+    color: var(--green);
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h2,
+.location-content h2 {
+    color: var(--brown);
+
+    font-size: 32px;
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h2 span {
+    color: var(--green);
+}
+
+.section-heading p:not(.section-label) {
+    color: var(--brown-light);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =====================================
+   15. SAMBUTAN
+===================================== */
+
+.welcome-section {
+    padding: 90px 7%;
+
+    background-color: var(--cream-light);
+}
+
+
+/* =====================================
+   16. FEATURE / KEUNGGULAN
+===================================== */
+
+.feature-section {
+    padding: 90px 7%;
+
+    background-color: var(--cream);
+}
+
+.feature-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    background-color: var(--cream-light);
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    border: 1px solid #e8dfc9;
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 12px 25px rgba(64, 34, 15, 0.1);
+}
+
+.feature-icon {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.feature-card h3 {
+    color: var(--brown);
+    font-size: 19px;
+
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   17. GALERI
+===================================== */
+
+.gallery-section {
+    padding: 90px 7%;
+
+    background-color: var(--cream-light);
+}
+
+.gallery-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.03);
+}
+
+.gallery-button {
+    margin-top: 35px;
+    text-align: center;
+}
+
+
+/* =====================================
+   18. LOKASI
+===================================== */
+
+.location-section {
+    padding: 90px 7%;
+
+    text-align: center;
+
+    background-color: #e9e5d3;
+}
+
+.location-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+.location-content p:not(.section-label) {
+    color: var(--brown-light);
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   19. FOOTER
+===================================== */
+
+.footer {
+    background-color: var(--brown);
+
+    color: var(--cream-light);
+
+    padding: 55px 7% 25px;
+
+    text-align: center;
+}
+
+.footer-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.footer-content > p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-note {
+    max-width: 500px;
+    margin: 20px auto;
+    color: #d7c8b5;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: var(--cream-light);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #c9d4a8;
+}
+
+.copyright {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+
+    color: #d7c8b5;
+}
+
+
+/* =====================================
+   20. RESPONSIVE TABLET DAN HP
+===================================== */
+
+@media screen and (max-width: 900px) {
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .feature-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    .nav-container {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background-color: var(--cream-light);
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .section-heading h2,
+    .location-content h2 {
+        font-size: 25px;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container img {
+        height: 230px;
+    }
+
+    .welcome-section,
+    .feature-section,
+    .gallery-section,
+    .location-section {
+        padding: 65px 6%;
+    }
+
+}
+
+
+/* =====================================
+   21. BANNER TENTANG KAMI
+===================================== */
+
+.about-hero {
+    min-height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            rgba(48, 35, 20, 0.65),
+            rgba(48, 35, 20, 0.65)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero-content {
+    color: var(--white);
+}
+
+.about-hero-content .section-label {
+    color: #e5d5b5;
+}
+
+.about-hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.about-hero-content p:last-child {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   22. PERKENALAN KSS
+===================================== */
+
+.about-introduction {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 90px 7%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 55px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 380px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px rgba(64, 34, 15, 0.12);
+}
+
+.about-text h2 {
+    font-size: 34px;
+    line-height: 1.4;
+
+    color: var(--brown);
+
+    margin-bottom: 20px;
+}
+
+.about-text h2 span {
+    color: var(--green);
+}
+
+.about-text p:not(.section-label) {
+    color: var(--brown-light);
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================
+   23. CERITA KSS
+===================================== */
+
+.about-story {
+    padding: 90px 7%;
+
+    background-color: #eae5d5;
+}
+
+.story-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.story-card {
+    background-color: var(--cream-light);
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    border: 1px solid #e5dcc7;
+
+    transition: 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(64, 34, 15, 0.1);
+}
+
+.story-card span {
+    display: block;
+
+    font-size: 42px;
+
+    margin-bottom: 18px;
+}
+
+.story-card h3 {
+    color: var(--brown);
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.story-card p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   24. GALERI TENTANG KSS
+===================================== */
+
+.about-gallery {
+    padding: 100px 7%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255, 253, 246, 0.92),
+            rgba(255, 253, 246, 0.92)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.about-gallery-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+.about-gallery-content h2 {
+    color: var(--brown);
+
+    font-size: 32px;
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+}
+
+.about-gallery-content p:not(.section-label) {
+    color: var(--brown-light);
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   25. RESPONSIVE TENTANG KAMI
+===================================== */
+
+@media screen and (max-width: 800px) {
+
+    .about-introduction {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 65px 6%;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .story-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+
+    .about-hero {
+        min-height: 280px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 35px;
+    }
+
+    .about-introduction {
+        padding: 55px 6%;
+    }
+
+    .about-image img {
+        height: 240px;
+    }
+
+    .about-text h2 {
+        font-size: 27px;
+    }
+
+    .story-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-story {
+        padding: 65px 6%;
+    }
+
+    .about-gallery {
+        padding: 70px 6%;
+    }
+
+    .about-gallery-content h2 {
+        font-size: 26px;
+    }
+
+}
+
+
+/* =====================================
+   26. BANNER MENU
+===================================== */
+
+.menu-hero {
+    min-height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            rgba(48, 35, 20, 0.65),
+            rgba(48, 35, 20, 0.65)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.menu-hero-content {
+    color: var(--white);
+}
+
+.menu-hero-content .section-label {
+    color: #e5d5b5;
+}
+
+.menu-hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.menu-hero-content p:last-child {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   27. PEMBUKA MENU
+===================================== */
+
+.menu-introduction {
+    padding: 80px 7%;
+
+    background-color: var(--cream-light);
+}
+
+
+/* =====================================
+   28. DAFTAR MENU
+===================================== */
+
+.menu-list-section {
+    padding: 70px 7%;
+
+    background-color: var(--cream);
+}
+
+.menu-information {
+    max-width: 650px;
+    margin: auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background-color: var(--cream-light);
+
+    border: 1px solid #e5dcc7;
+    border-radius: 20px;
+}
+
+.menu-information-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.menu-information h2 {
+    color: var(--brown);
+
+    font-size: 25px;
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+}
+
+.menu-information p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =====================================
+   29. TEMPLATE KARTU MENU
+===================================== */
+
+.menu-card {
+    overflow: hidden;
+
+    background-color: var(--cream-light);
+
+    border: 1px solid #e5dcc7;
+    border-radius: 16px;
+
+    transition: 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(64, 34, 15, 0.1);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+}
+
+.menu-card-content {
+    padding: 20px;
+}
+
+.menu-card-content h3 {
+    color: var(--brown);
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.menu-card-content p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+.menu-card-content span {
+    color: var(--green);
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   30. CATATAN MENU
+===================================== */
+
+.menu-note {
+    padding: 30px 7%;
+
+    background-color: #eae5d5;
+
+    text-align: center;
+}
+
+.menu-note p {
+    color: var(--brown-light);
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    margin-bottom: 8px;
+}
+
+
+/* =====================================
+   31. RESPONSIVE MENU
+===================================== */
+
+@media screen and (max-width: 600px) {
+
+    .menu-hero {
+        min-height: 280px;
+    }
+
+    .menu-hero-content h1 {
+        font-size: 36px;
+    }
+
+    .menu-information {
+        padding: 35px 20px;
+    }
+
+    .menu-information h2 {
+        font-size: 21px;
+    }
+
+    .menu-list-section {
+        padding: 55px 6%;
+    }
+
+    .menu-introduction {
+        padding: 60px 6%;
+    }
+
+}
+
+
+/* =================================
+   1. BANNER GALERI KENANGAN
+================================= */
+
+.memory-hero {
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            rgba(40, 25, 12, 0.65),
+            rgba(40, 25, 12, 0.65)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.memory-hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.memory-hero-content h1 {
+    font-size: 42px;
+    margin: 15px 0;
+    letter-spacing: 1px;
+}
+
+.memory-hero-content p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   2. PEMBUKA GALERI
+================================= */
+
+.memory-introduction {
+    padding: 70px 20px 35px;
+    text-align: center;
+}
+
+.memory-introduction .section-heading {
+    max-width: 700px;
+    margin: auto;
+}
+
+
+/* =================================
+   3. GRID GALERI FOTO
+================================= */
+
+.memory-gallery {
+    padding: 35px 7% 80px;
+}
+
+.memory-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* =================================
+   4. KARTU FOTO
+================================= */
+
+.memory-item {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--cream-light);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.10);
+
+    transition: 0.3s ease;
+}
+
+.memory-item img {
+    width: 100%;
+    height: 250px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.memory-item figcaption {
+    padding: 17px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    color: var(--brown);
+
+    text-align: center;
+}
+
+
+/* =================================
+   5. EFEK SAAT FOTO DISENTUH
+================================= */
+
+.memory-item:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.memory-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =================================
+   6. BAGIAN VIDEO
+================================= */
+
+.memory-video-section {
+    padding: 70px 20px 90px;
+
+    background-color: var(--cream-light);
+}
+
+.memory-video-section .section-heading {
+    max-width: 700px;
+    margin: auto auto 35px;
+
+    text-align: center;
+}
+
+.video-placeholder {
+    max-width: 750px;
+    min-height: 280px;
+
+    margin: auto;
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #e9e1c9;
+
+    border: 2px dashed var(--green);
+    border-radius: 18px;
+}
+
+.video-placeholder-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    color: white;
+    background-color: var(--green);
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+.video-placeholder h3 {
+    margin-bottom: 10px;
+    color: var(--brown);
+}
+
+.video-placeholder p {
+    max-width: 450px;
+
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   7. RESPONSIVE TABLET
+================================= */
+
+@media screen and (max-width: 900px) {
+
+    .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .memory-item img {
+        height: 230px;
+    }
+
+}
+
+
+/* =================================
+   8. RESPONSIVE HP
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    .memory-hero {
+        min-height: 280px;
+    }
+
+    .memory-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .memory-hero-content p {
+        font-size: 14px;
+    }
+
+    .memory-introduction {
+        padding: 50px 20px 20px;
+    }
+
+    .memory-gallery {
+        padding: 25px 18px 55px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .memory-item img {
+        height: 240px;
+    }
+
+    .memory-video-section {
+        padding: 50px 18px 65px;
+    }
+
+    .video-placeholder {
+        min-height: 250px;
+    }
+
+}
+
+
+/* =================================
+   1. HERO LOKASI
+================================= */
+
+.location-hero {
+    min-height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(40, 25, 12, 0.65),
+            rgba(40, 25, 12, 0.65)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.location-hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.location-hero-content h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.location-hero-content p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   2. INFORMASI LOKASI
+================================= */
+
+.location-information {
+    padding: 75px 20px;
+}
+
+.location-information .section-heading {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.location-card {
+    max-width: 600px;
+
+    margin: 40px auto 0;
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: var(--cream-light);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.location-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.location-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--brown);
+}
+
+.location-card p {
+    color: var(--brown-light);
+    line-height: 1.8;
+}
+
+.location-status {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 9px 17px;
+
+    background: #e9e1c9;
+    color: var(--green);
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =================================
+   3. PETA LOKASI
+================================= */
+
+.location-map-section {
+    padding: 75px 20px;
+
+    background: var(--cream-light);
+}
+
+.location-map-section .section-heading {
+    max-width: 700px;
+    margin: 0 auto 35px;
+
+    text-align: center;
+}
+
+.map-placeholder {
+    max-width: 1000px;
+    min-height: 320px;
+
+    margin: auto;
+    padding: 35px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #e9e1c9;
+
+    border: 2px dashed var(--green);
+    border-radius: 18px;
+}
+
+.map-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
+}
+
+.map-placeholder h3 {
+    color: var(--brown);
+    margin-bottom: 12px;
+}
+
+.map-placeholder p {
+    max-width: 450px;
+
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   4. PETUNJUK KUNJUNGAN
+================================= */
+
+.location-guide {
+    padding: 75px 7%;
+}
+
+.location-guide .section-heading {
+    max-width: 700px;
+    margin: 0 auto 40px;
+
+    text-align: center;
+}
+
+.guide-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.guide-card {
+    padding: 30px 22px;
+
+    text-align: center;
+
+    background: var(--cream-light);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-6px);
+}
+
+.guide-card span {
+    display: block;
+
+    font-size: 38px;
+
+    margin-bottom: 18px;
+}
+
+.guide-card h3 {
+    color: var(--brown);
+
+    font-size: 18px;
+
+    margin-bottom: 12px;
+}
+
+.guide-card p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   5. RESPONSIVE TABLET
+================================= */
+
+@media screen and (max-width: 900px) {
+
+    .guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =================================
+   6. RESPONSIVE HP
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    .location-hero {
+        min-height: 280px;
+    }
+
+    .location-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .location-hero-content p {
+        font-size: 14px;
+    }
+
+    .location-information {
+        padding: 50px 18px;
+    }
+
+    .location-map-section {
+        padding: 50px 18px;
+    }
+
+    .map-placeholder {
+        min-height: 250px;
+    }
+
+    .location-guide {
+        padding: 50px 18px;
+    }
+
+    .guide-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+}
+
+
+/* =================================
+   1. HERO LAYANAN
+================================= */
+
+.service-hero {
+    min-height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(40, 25, 12, 0.65),
+            rgba(40, 25, 12, 0.65)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.service-hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.service-hero-content h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.service-hero-content p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   2. PENGENALAN LAYANAN
+================================= */
+
+.service-introduction {
+    padding: 75px 20px 40px;
+}
+
+.service-introduction .section-heading {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* =================================
+   3. KARTU LAYANAN
+================================= */
+
+.service-list-section {
+    padding: 35px 7% 80px;
+}
+
+.service-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: var(--cream-light);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.13);
+}
+
+.service-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--brown);
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.service-link {
+    display: inline-block;
+
+    color: var(--green);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.service-link:hover {
+    color: var(--brown);
+}
+
+
+/* =================================
+   4. FASILITAS
+================================= */
+
+.facility-section {
+    padding: 75px 20px;
+
+    background: var(--cream-light);
+}
+
+.facility-section .section-heading {
+    max-width: 700px;
+    margin: auto auto 35px;
+
+    text-align: center;
+}
+
+.facility-placeholder {
+    max-width: 750px;
+    min-height: 260px;
+
+    margin: auto;
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #e9e1c9;
+
+    border: 2px dashed var(--green);
+    border-radius: 18px;
+}
+
+.facility-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.facility-placeholder h3 {
+    color: var(--brown);
+    margin-bottom: 12px;
+}
+
+.facility-placeholder p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   5. CATATAN LAYANAN
+================================= */
+
+.service-note {
+    max-width: 900px;
+
+    margin: 50px auto;
+    padding: 0 25px;
+
+    text-align: center;
+}
+
+.service-note p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =================================
+   6. RESPONSIVE TABLET
+================================= */
+
+@media screen and (max-width: 900px) {
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =================================
+   7. RESPONSIVE HP
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    .service-hero {
+        min-height: 280px;
+    }
+
+    .service-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .service-hero-content p {
+        font-size: 14px;
+    }
+
+    .service-introduction {
+        padding: 50px 18px 25px;
+    }
+
+    .service-list-section {
+        padding: 25px 18px 55px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .service-card {
+        padding: 30px 22px;
+    }
+
+    .facility-section {
+        padding: 50px 18px;
+    }
+
+    .facility-placeholder {
+        min-height: 230px;
+    }
+
+}
+
+
+/* =================================
+   1. HERO PESAN
+================================= */
+
+.message-hero {
+    min-height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(40, 25, 12, 0.65),
+            rgba(40, 25, 12, 0.65)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.message-hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.message-hero-content h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.message-hero-content p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   2. PENGENALAN PESAN
+================================= */
+
+.message-introduction {
+    padding: 75px 20px 40px;
+}
+
+.message-introduction .section-heading {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* =================================
+   3. KARTU INFORMASI
+================================= */
+
+.message-options {
+    max-width: 1150px;
+
+    margin: auto;
+    padding: 35px 25px 80px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.message-card {
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: var(--cream-light);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.message-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.13);
+}
+
+.message-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.message-card h3 {
+    color: var(--brown);
+
+    font-size: 19px;
+
+    margin-bottom: 15px;
+}
+
+.message-card p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   4. CATATAN INFORMASI
+================================= */
+
+.message-information {
+    padding: 75px 20px;
+
+    background: var(--cream-light);
+}
+
+.message-information-content {
+    max-width: 800px;
+
+    margin: auto;
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: #e9e1c9;
+
+    border-radius: 18px;
+}
+
+.message-information-content h2 {
+    color: var(--brown);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.message-information-content p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.9;
+
+    margin-bottom: 12px;
+}
+
+
+/* =================================
+   5. RESPONSIVE TABLET
+================================= */
+
+@media screen and (max-width: 900px) {
+
+    .message-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =================================
+   6. RESPONSIVE HP
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    .message-hero {
+        min-height: 280px;
+    }
+
+    .message-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .message-hero-content p {
+        font-size: 14px;
+    }
+
+    .message-introduction {
+        padding: 50px 18px 25px;
+    }
+
+    .message-options {
+        grid-template-columns: 1fr;
+
+        padding: 25px 18px 55px;
+
+        gap: 18px;
+    }
+
+    .message-card {
+        padding: 30px 22px;
+    }
+
+    .message-information {
+        padding: 50px 18px;
+    }
+
+    .message-information-content {
+        padding: 30px 20px;
+    }
+
+    .message-information-content h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =================================
+   1. HERO KONTAK
+================================= */
+
+.contact-hero {
+    min-height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(40, 25, 12, 0.65),
+            rgba(40, 25, 12, 0.65)
+        ),
+        url("img/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.contact-hero-content h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.contact-hero-content p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   2. PEMBUKA KONTAK
+================================= */
+
+.contact-introduction {
+    padding: 75px 20px 40px;
+}
+
+.contact-introduction .section-heading {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* =================================
+   3. KARTU KONTAK
+================================= */
+
+.contact-options {
+    max-width: 1150px;
+
+    margin: auto;
+    padding: 35px 25px 80px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: var(--cream-light);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.13);
+}
+
+.contact-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    color: var(--brown);
+
+    font-size: 19px;
+
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.contact-status {
+    display: inline-block;
+
+    padding: 9px 16px;
+
+    color: var(--green);
+    background: #e9e1c9;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.contact-link {
+    display: inline-block;
+
+    color: var(--green);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    color: var(--brown);
+}
+
+
+/* =================================
+   4. CATATAN KONTAK
+================================= */
+
+.contact-note-section {
+    padding: 75px 20px;
+
+    background: var(--cream-light);
+}
+
+.contact-note {
+    max-width: 800px;
+
+    margin: auto;
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: #e9e1c9;
+
+    border-radius: 18px;
+}
+
+.contact-note h2 {
+    color: var(--brown);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.contact-note p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.9;
+
+    margin-bottom: 12px;
+}
+
+
+/* =================================
+   5. RESPONSIVE TABLET
+================================= */
+
+@media screen and (max-width: 900px) {
+
+    .contact-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =================================
+   6. RESPONSIVE HP
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    .contact-hero {
+        min-height: 280px;
+    }
+
+    .contact-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .contact-hero-content p {
+        font-size: 14px;
+    }
+
+    .contact-introduction {
+        padding: 50px 18px 25px;
+    }
+
+    .contact-options {
+        grid-template-columns: 1fr;
+
+        padding: 25px 18px 55px;
+
+        gap: 18px;
+    }
+
+    .contact-card {
+        padding: 30px 22px;
+    }
+
+    .contact-note-section {
+        padding: 50px 18px;
+    }
+
+    .contact-note {
+        padding: 30px 20px;
+    }
+
+    .contact-note h2 {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =================================
+   HALAMAN ULASAN KSS
+================================= */
+
+.review-hero {
+    min-height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+
+    background:
+        linear-gradient(rgba(45, 35, 20, 0.65),
+        rgba(45, 35, 20, 0.65)),
+        url("img/background.jpg") center/cover;
+}
+
+.review-hero-content {
+    max-width: 750px;
+    color: white;
+}
+
+.review-hero h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.review-hero p {
+    line-height: 1.8;
+}
+
+.review-introduction {
+    padding: 65px 20px 35px;
+    text-align: center;
+}
+
+.review-list-section {
+    padding: 30px 20px 70px;
+}
+
+.review-placeholder {
+    max-width: 650px;
+    margin: auto;
+    padding: 50px 25px;
+    text-align: center;
+
+    background: var(--cream-light);
+    border: 1px solid #e5dcc8;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(64, 34, 15, 0.08);
+}
+
+.review-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.review-placeholder h2 {
+    font-size: 23px;
+    color: var(--brown);
+    margin-bottom: 15px;
+}
+
+.review-placeholder p {
+    color: var(--brown-light);
+    line-height: 1.8;
+}
+
+.review-information {
+    padding: 30px 20px 70px;
+}
+
+.review-info-card {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px 25px;
+    text-align: center;
+
+    background: #e9eddf;
+    border-radius: 20px;
+}
+
+.review-info-card h2 {
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+.review-info-card p {
+    color: var(--brown-light);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.review-button {
+    display: inline-block;
+    padding: 13px 25px;
+
+    background: var(--green);
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.review-button:hover {
+    background: var(--brown);
+    transform: translateY(-3px);
+}
+
+
+/* RESPONSIVE ULASAN */
+
+@media screen and (max-width: 650px) {
+
+    .review-hero {
+        min-height: 260px;
+    }
+
+    .review-hero h1 {
+        font-size: 30px;
+    }
+
+    .review-placeholder {
+        padding: 35px 20px;
+    }
+
+    .review-placeholder h2 {
+        font-size: 20px;
+    }
+
+    .review-info-card {
+        padding: 30px 20px;
+    }
+
+}
+
+
+/* =================================
+   TENTANG KSS - MOMENTS
+================================= */
+
+.about-moments {
+    padding: 75px 20px;
+    background: var(--cream-light);
+}
+
+.moments-container {
+    max-width: 1150px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.moment-card {
+    overflow: hidden;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(64, 34, 15, 0.09);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.moment-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 15px 30px rgba(64, 34, 15, 0.15);
+}
+
+.moment-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.moment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.moment-card:hover .moment-image img {
+    transform: scale(1.08);
+}
+
+.moment-content {
+    padding: 25px;
+}
+
+.moment-content span {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--green);
+}
+
+.moment-content h3 {
+    margin: 12px 0;
+    font-size: 21px;
+    color: var(--brown);
+}
+
+.moment-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--brown-light);
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 850px) {
+    .moments-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .moments-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .moment-image {
+        height: 230px;
+    }
+
+    .moment-content {
+        padding: 22px;
+    }
+}
